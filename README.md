@@ -210,15 +210,5 @@ Execute `npm test` para rodar os **29 testes automatizados** com Vitest cobrindo
 
 ---
 
-## Roteiro Sugerido para Vídeo de Apresentação (até 5 minutos)
+## Vídeo de Apresentação
 
-O roteiro abaixo foi desenhado para destacar o **funcionamento do algoritmo** e a **visualização interativa**, mantendo ritmo objetivo dentro do limite de 5 minutos:
-
-| Tempo | Bloco | O que mostrar na tela e explicar |
-| --- | --- | --- |
-| **0:00 – 0:40** | **Introdução e Problema** | Apresente o nome do projeto (**StringMatch Visualizer**), o problema de **Sequence Alignment** (Kleinberg & Tardos, Seção 6.6) e abra o cartão **Referência da Recorrência** para explicar brevemente $M[i][j]$, os casos-base $i\delta, j\delta$ e as penalidades $\alpha$ e $\delta$. |
-| **0:40 – 2:10** | **Preenchimento Passo a Passo (`GATO × GALO`)** | Com o exemplo padrão `GATO × GALO` ($\alpha=1, \delta=1$), clique em **Iniciar algoritmo**. Avance alguns passos manualmente para mostrar os casos-base (primeira coluna e primeira linha). Depois, avance até células internas — destacando especialmente `(3, 3)` (`T` vs `L`) — apontando as **3 setas SVG** na matriz e os **3 candidatos** no painel lateral. Em seguida, clique em **Executar automaticamente** (em `1×` ou `1.5×`) até completar $M[4][4] = 1$. |
-| **2:10 – 3:05** | **Reconstrução do Alinhamento Ótimo** | Com a matriz concluída, clique em **Reconstruir passo a passo** no painel inferior. Mostre a diferenciação visual (caminho em **fúcsia** retrocedendo de `(4, 4)` até `(0, 0)`), o alinhamento `GATO` ↔ `GALO` sendo montado da direita para a esquerda e a conferência das métricas (`3` correspondências, `1` diferença, custo total `1`). |
-| **3:05 – 4:10** | **Sensibilidade a Penalidades, Empates e Casos-Base** | 1) Selecione o preset **`GATO × GALO (α=3, δ=1)`**, clique em **Ir ao fim** e **Mostrar alinhamento completo**: mostre que, quando diferença fica mais cara que duas lacunas ($\alpha > 2\delta$), o algoritmo passa a preferir 2 lacunas com custo `2` em vez da substituição de custo `3`.<br>2) Selecione **`A × AA`** (ou **`ε × CASA`**): demonstre o aviso de **múltiplos alinhamentos ótimos** e a regra determinística `diagonal > cima > esquerda` (ou o caso-base puro com sequência vazia). |
-| **4:10 – 4:45** | **Complexidade e Verificação Automatizada** | Comente a complexidade **Tempo $O(m \times n)$** e **Espaço $O(m \times n)$** (citando a possibilidade de espaço linear $O(m+n)$ da Seção 6.7) e mostre rapidamente no terminal o comando `npm test` passando todos os testes unitários do algoritmo no Vitest. |
-| **4:45 – 5:00** | **Encerramento** | Resuma como a separação entre algoritmo puro e visualização determinística facilita o estudo da Programação Dinâmica e encerre a apresentação. |
